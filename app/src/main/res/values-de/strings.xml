@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BW DMX Scanner</string>
+    <string name="main_text_Code_Type">Code Art:</string>
+    <string name="universal_undefined">undefiniert</string>
+    <string name="main_button_encode">Dekodieren</string>
+    <string name="main_button_scan">Scannen</string>
+    <string name="main_text_plant">Ort:</string>
+    <string name="main_text_inventoryOfMachine">Inventarnummer:</string>
+    <string name="main_code_encoded">Der Code muss für den Scan sauber sein</string>
+    <string name="main_text_bwPartNo">BW Teil Nummer:</string>
+    <string name="main_text_EngRevLvl">Änderungszustand:</string>
+    <string name="main_text_julianDate">Datum:</string>
+    <string name="main_text_counter">Zähler:</string>
+    <string name="main_switch_translateToLang">"Übersetzen   "</string>
+    <string name="title_activity_about">Mitwirkende</string>
+    <string name="about_text_author">Programmierer: Daniel Juric</string>
+    <string name="about_text_startDate">Start Datum: 26. September 2016</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6826614050884686/2130549252</string>
+    <string name="about_text_allRightsReserved">Alle Rechte Vorbehalten</string>
+    <string name="main_menu_item_about">Über</string>
+    <string name="main_menu_item_share">Teilen</string>
+</resources>

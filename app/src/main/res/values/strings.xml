@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BW DMX Scanner</string>
+    <string name="main_text_copyright" translatable="false">2016 Daniel Juric</string>
+    <string name="main_text_Code" translatable="false">Code:</string>
+    <string name="main_text_Code_Type">Code Type:</string>
+    <string name="universal_undefined">undefined</string>
+    <string name="main_button_encode">Encode</string>
+    <string name="main_button_scan">Scan</string>
+    <string name="main_text_plant">Plant:</string>
+    <string name="main_text_inventoryOfMachine">Inventory of machine:</string>
+    <string name="main_code_encoded">The Code have to be clean for scan</string>
+    <string name="main_text_bwPartNo">BW part number:</string>
+    <string name="main_text_EngRevLvl">Eng. Rev. Level:</string>
+    <string name="main_text_julianDate">Date:</string>
+    <string name="main_text_counter">Counter:</string>
+    <string name="main_switch_translateToLang">"Translate   "</string>
+    <string name="title_activity_about">Credits</string>
+    <string name="about_text_author">Creator: Daniel Juric</string>
+    <string name="about_text_startDate">Start Date: September, 26th 2016</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6826614050884686/2130549252</string>
+    <string name="about_text_allRightsReserved">All Rights Reserved</string>
+    <string name="main_menu_item_about">About</string>
+    <string name="main_menu_item_share">Share</string>
+</resources>

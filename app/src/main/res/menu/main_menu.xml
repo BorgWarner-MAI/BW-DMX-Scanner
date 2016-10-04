@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item_about"
+        android:icon="@drawable/ic_action_help_circle"
+        app:showAsAction="ifRoom"
+        android:title="About"></item>
+
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_action_name"
+        app:showAsAction="ifRoom|withText"
+        android:title="Share">
+        <menu >
+            <item android:title="E-Mail"
+                android:id="@+id/menu_item_share_email" />
+            <item android:title="WhatsApp"
+                android:id="@+id/menu_item_share_whatsapp" />
+        </menu>
+    </item>
+</menu>
