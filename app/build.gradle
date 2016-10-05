@@ -22,7 +22,7 @@ android {
         applicationId "danieljuric.borgwarner"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 55
+        versionCode 56
         versionName "0.5.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
