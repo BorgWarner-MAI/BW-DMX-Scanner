@@ -385,7 +385,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setAllCodes(String allCodes) {
-        this.allCodes = allCodes;
+        if (allCodes == null) {
+            this.allCodes = "Nichts Gescannt!";
+        } else {
+            this.allCodes = allCodes;
+        }
     }
 
     public String getAllCodes() {
