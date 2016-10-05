@@ -1,12 +1,10 @@
 package danieljuric.borgwarner;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -14,21 +12,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.mopub.mobileads.MoPubView;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.ParseException;
@@ -38,10 +31,7 @@ import java.util.Date;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
-    //private MoPubView moPubView;
     private AdView mAdView;
-    Context cxt = this;
-    String fileName = "codes.txt";
     String allCodes;
     String scanContent2;
 
@@ -61,17 +51,9 @@ public class MainActivity extends AppCompatActivity {
         // Setze Toolbar zu Actionbar für diese Activity
         // Die Toolbar darf nicht null sein
         setSupportActionBar(toolbar);
-        // On Click About
 
 
-
-
-
-        final TextView main_code_encoded = (TextView) findViewById(R.id.main_code_encoded);
-        final TextView main_code_string = (TextView) findViewById(R.id.main_code_string) ;
         final Button main_button_encode = (Button) findViewById(R.id.main_button_encode);
-        Switch main_switch_translateToLang = (Switch) findViewById(R.id.main_switch_translateToLang);
-
         main_button_encode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -284,49 +266,42 @@ public class MainActivity extends AppCompatActivity {
         v.vibrate(100);
     }
 
-    public void stopVibration(Vibrator v) {
-        v.cancel();
-    }
-
     public String getPlant(String id) {
-        String location;
         switch (id) {
             case "50":
-                return location = "Kirchheimbolanden (Deutschland)";
+                return "Kirchheimbolanden (Deutschland)";
 
             case "30":
-                return location = "Italiba (Brasilien)";
+                return "Italiba (Brasilien)";
 
             case "70":
-                return location = "Oroszlány (Ungarn)";
+                return "Oroszlány (Ungarn)";
 
             case "75":
-                return location = "Rzeszów (Polen)";
+                return "Rzeszów (Polen)";
 
             case "60":
-                return location = "Brandford (England)";
+                return "Brandford (England)";
 
             // Ramos (Mexico): Keine Standort Kennung
 
             // Asheville (USA): Keine Standort Kennung
 
             case "90":
-                return location = "Ningbo/Taicang (China)";
+                return "Ningbo/Taicang (China)";
 
             case "91":
-                return location = "PyongTaek (Korea)";
+                return "PyongTaek (Korea)";
 
             case "00":
-                return location = "Externer Lieferant";
+                return "Externer Lieferant";
 
             default:
-                return location = id;
+                return id;
             }
         }
 
     public String getJulianDate(String julianDate) {
-        int x = 4713;
-        int day = Integer.parseInt(julianDate) - x;
         Date date = null;
         try {
             date = new SimpleDateFormat("D").parse(julianDate);
@@ -360,21 +335,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(MainActivity.this, "Kein Email Programm installiert!", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void saveToFile(String fileName, String context) {
-        FileOutputStream fos = null;
-        try {
-            fos = openFileOutput(fileName, Context.MODE_PRIVATE);
-            fos.write(context.getBytes());
-            fos.close();
-            Toast.makeText(this, "File Saved: " + fileName, Toast.LENGTH_SHORT).show();
-        } catch (Exception e){
-            e.printStackTrace();
-            Toast.makeText(this, "File not Saved!", Toast.LENGTH_SHORT).show();
-        }
-
-
     }
 
     public void setAllCodes(String allCodes) {
