@@ -1,0 +1,5 @@
+http://www.java-samples.com/showtutorial.php?tutorialid=1523
+
+http://www.android-hilfe.de/thema/textdatei-erstellen-speichern-auslesen-editieren.420169/
+
+https://github.com/BorgWarner-MAI/BW-DMX-Scanner

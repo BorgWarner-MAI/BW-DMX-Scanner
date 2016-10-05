@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
  * Erstellt von: dajuric
@@ -32,7 +33,7 @@ class FileSystem {
 
     File getStorageDir(String name) {
         // Gets the dir
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.getExternalStorageState()), name);
+        File file = new File("/storage/emulated/0/BW-DMX-Scanner");
         if (!file.mkdirs()) {
             Log.e("ERROR", "Pfad nicht erstellt!");
         }
@@ -42,15 +43,17 @@ class FileSystem {
 
     public void saveToTxt(String text) {
         try {
-            FileOutputStream outputStream = new FileOutputStream("logfile.txt");
-            outputStream.write(text.getBytes());
-            outputStream.close();
-        } catch (FileNotFoundException e) {
-            Log.e("Exception", "File Not Found");
-            e.printStackTrace();
-        } catch (IOException e) {
-            Log.e("Exception", "IO");
-            e.printStackTrace();
+            File file = new File("/storage/emulated/0/BW-DMX-Scanner");
+            file.createNewFile();
+            FileOutputStream fOut = new FileOutputStream(file);
+            OutputStreamWriter OutWriter = new OutputStreamWriter(fOut);
+            OutWriter.append(text);
+            OutWriter.close();
+            fOut.close();
+
+
+        } catch (Exception e) {
+
         }
     }
 

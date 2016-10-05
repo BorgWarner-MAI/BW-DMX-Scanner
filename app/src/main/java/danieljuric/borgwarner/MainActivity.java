@@ -225,18 +225,10 @@ public class MainActivity extends AppCompatActivity {
 
             /** ================== Nach der Einteilung ================== **/
 
-            
-            // Ordner Anlegen
             final String text = "Der gescanne Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungszustand: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n";
             setScanContent(scanContent);
             setAllCodes(text);
             FileSystem fileSystem = new FileSystem();
-            if(fileSystem.isExternalStorageWritable()) {
-                fileSystem.getStorageDir("BW DMX Scanner"); // Ordner Name
-            } else {
-                Toast.makeText(this, "File not Created!", Toast.LENGTH_SHORT).show();
-            }
-            // Ordner Anlegen Fertig
             // Text Datei Anlegen
             fileSystem.saveToTxt(text);
 
