@@ -102,7 +102,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
 
         android:id="@+id/main_code_type_string"
@@ -114,25 +114,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_code_plant_string"
-        android:layout_above="@+id/main_text_inventoryOfMachine"
-        android:layout_alignStart="@+id/main_code_type_string"
-        android:textAlignment="viewEnd" />
-
-    <TextView
-        android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_code_string"
-        android:layout_above="@+id/main_code_plant_string"
-        android:layout_alignStart="@+id/main_code_plant_string"
-        android:textAlignment="viewEnd" />
-
-    <TextView
-        android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/main_code_EngRevLvl_string"
         android:layout_alignBaseline="@+id/main_text_EngRevLvl"
@@ -142,7 +124,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="8pt"
         android:id="@+id/main_code_counter_string"
         android:layout_above="@+id/main_code_type_string"
@@ -151,7 +133,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
 
         android:id="@+id/main_code_inventoryOfMachine_string"
@@ -161,7 +143,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/main_code_bwPartNo_string"
         android:layout_above="@+id/main_code_EngRevLvl_string"
@@ -170,7 +152,7 @@
 
     <TextView
         android:text="@string/universal_undefined"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:id="@+id/main_code_julianDate_string"
 
         android:layout_height="8pt"
@@ -216,4 +198,22 @@
         android:layout_width="wrap_content"
         android:layout_above="@+id/main_button_encode"
         android:layout_alignEnd="@+id/main_code_encoded" />
+
+    <TextView
+        android:text="@string/universal_undefined"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_code_plant_string"
+        android:textAlignment="viewEnd"
+        android:layout_above="@+id/main_text_inventoryOfMachine"
+        android:layout_alignEnd="@+id/main_code_counter_string" />
+
+    <TextView
+        android:text="@string/universal_undefined"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_code_string"
+        android:textAlignment="viewEnd"
+        android:layout_width="300dp"
+        android:layout_above="@+id/main_code_plant_string"
+        android:layout_alignStart="@+id/main_code_plant_string" />
 </RelativeLayout>
