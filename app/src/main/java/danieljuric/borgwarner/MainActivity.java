@@ -134,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
             final String scanContent = scanningResult.getContents();
             //Toast.makeText(this, "Code Erkannt:\n" + scanContent, Toast.LENGTH_LONG).show();
 
-            TextView main_code_string                    = (TextView) findViewById(R.id.main_code_string);
-            TextView main_code_encoded                   = (TextView) findViewById(R.id.main_code_encoded);
+            TextView main_code_string                          = (TextView) findViewById(R.id.main_code_string);
+            TextView main_code_encoded                         = (TextView) findViewById(R.id.main_code_encoded);
             final TextView main_code_type_string               = (TextView) findViewById(R.id.main_code_type_string);
             final TextView main_code_plant_string              = (TextView) findViewById(R.id.main_code_plant_string);
             final TextView main_code_inventoryOfMachine_string = (TextView) findViewById(R.id.main_code_inventoryOfMachine_string);
@@ -242,8 +242,7 @@ public class MainActivity extends AppCompatActivity {
             final String text = "Der gescanne Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungszustand: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n";
             setScanContent(scanContent);
             setAllCodes(text);
-            saveToFile(fileName, "Der gescanne Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungszustand: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n\n\n");
-
+            saveToFile("logs\\logfile.txt", "Context");
         } else {
             Toast.makeText(this, "Keine Daten erhalten", Toast.LENGTH_SHORT).show();
         }
@@ -355,33 +354,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private boolean saveToFile(String fileName, String text) {
-        // Prüfer für die erfolgreiche Speicherung
-        boolean isSaved = true;
-
+    public void saveToFile(String fileName, String context) {
         FileOutputStream fos = null;
         try {
-            // Öffnen des privaten FileOutputStream
-            fos = cxt.openFileOutput(fileName, Context.MODE_PRIVATE);
-        } catch (FileNotFoundException e) {
-            // Fehler beim speichern
-            isSaved = false;
-        }
-        try {
-            // Schreibe den Text in die Datei
-            fos.write(text.getBytes());
-        } catch (IOException e) {
-            // Fehler beim Speichern
-            isSaved = false;
-        }
-        try {
+            fos = openFileOutput(fileName, Context.MODE_PRIVATE);
+            fos.write(context.getBytes());
             fos.close();
-        } catch (IOException e) {
-            // Fehler beim Speichern
-            isSaved = false;
+            Toast.makeText(this, "File Saved: " + fileName, Toast.LENGTH_SHORT).show();
+        } catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "File not Saved!", Toast.LENGTH_SHORT).show();
         }
 
-        return  isSaved;
+
     }
 
     public void setAllCodes(String allCodes) {
