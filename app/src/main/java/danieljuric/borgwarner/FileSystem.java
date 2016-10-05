@@ -2,11 +2,9 @@ package danieljuric.borgwarner;
 
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -16,7 +14,7 @@ import java.io.OutputStreamWriter;
  * Datum: 05.10.2016
  * Packagename: ${PACKAGE_NAME}
  */
-
+// TODO Datei soll im Normalen Speicher sein
 class FileSystem {
     /* Checks if external storage is available for read and write */
     boolean isExternalStorageWritable() {
