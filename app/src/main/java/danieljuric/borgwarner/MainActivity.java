@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         // Die Toolbar darf nicht null sein
         setSupportActionBar(toolbar);
 
+        FileSystem fileSystem = new FileSystem();
+        Toast.makeText(this, fileSystem.loadFromTxt(), Toast.LENGTH_LONG).show();
+
 
         final Button main_button_encode = (Button) findViewById(R.id.main_button_encode);
         main_button_encode.setOnClickListener(new View.OnClickListener() {
@@ -233,10 +236,15 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "File not Created!", Toast.LENGTH_SHORT).show();
             }
+            // Ordner Anlegen Fertig
+            // Text Datei Anlegen
+            fileSystem.saveToTxt(text);
+
         } else {
             Toast.makeText(this, "Keine Daten erhalten", Toast.LENGTH_SHORT).show();
         }
-        // Ordner Anlegen Fertig
+
+
         
     }
 
