@@ -22,13 +22,13 @@ android {
         applicationId "danieljuric.borgwarner"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 68
+        versionCode 69
         versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true;
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true;
         }
@@ -40,10 +40,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
-        transitive = true;
-    }
-    compile('com.mopub:mopub-sdk:4.9.0@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
     compile('io.fabric.sdk.android:fabric:1.3.10@aar') {
@@ -53,10 +50,18 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.journeyapps:zxing-android-embedded:3.1.0@aar'
     compile 'com.google.zxing:core:3.2.0'
-    compile 'com.google.android.gms:play-services:9.6.1'
     compile 'com.google.firebase:firebase-ads:9.6.1'
     compile 'com.google.android.gms:play-services:9.6.1'
     testCompile 'junit:junit:4.12'
+    compile('com.crashlytics.sdk.android:crashlytics-ndk:1.1.5@aar') {
+        transitive = true;
+    }
 }
 
 //apply plugin: 'com.google.gms.google-services'
+
+crashlytics {
+    enableNdk true
+    androidNdkOut 'src/main/obj'
+    androidNdkLibsOut 'src/main/libs'
+}
