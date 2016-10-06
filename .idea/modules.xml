@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BW-DMX-Scanner-LOSCHEN.iml" filepath="$PROJECT_DIR$/BW-DMX-Scanner-LOSCHEN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BorgWarner.iml" filepath="$PROJECT_DIR$/BorgWarner.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
