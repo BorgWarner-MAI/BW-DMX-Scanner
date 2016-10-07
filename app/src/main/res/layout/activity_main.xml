@@ -155,10 +155,21 @@
         android:text="@string/universal_undefined"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+
+        android:id="@+id/main_code_type_string"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/main_code_string"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/universal_undefined"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:id="@+id/main_code_plant_string"
         android:textAlignment="viewEnd"
-        android:layout_below="@+id/main_code_string"
-        android:layout_alignStart="@+id/main_code_string" />
+        android:layout_above="@+id/main_text_inventoryOfMachine"
+        android:layout_alignStart="@+id/main_code_type_string" />
 
     <TextView
         android:text="@string/universal_undefined"
@@ -167,8 +178,9 @@
 
         android:id="@+id/main_code_inventoryOfMachine_string"
         android:textAlignment="viewEnd"
-        android:layout_above="@+id/main_text_inventoryOfMachine"
-        android:layout_alignStart="@+id/main_code_bwPartNo_string" />
+        android:layout_alignBaseline="@+id/main_text_inventoryOfMachine"
+        android:layout_alignBottom="@+id/main_text_inventoryOfMachine"
+        android:layout_alignStart="@+id/main_code_plant_string" />
 
     <TextView
         android:text="@string/universal_undefined"
@@ -176,9 +188,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/main_code_bwPartNo_string"
         android:textAlignment="viewEnd"
-        android:layout_alignBaseline="@+id/main_text_inventoryOfMachine"
-        android:layout_alignBottom="@+id/main_text_inventoryOfMachine"
-        android:layout_alignStart="@+id/main_code_EngRevLvl_string" />
+        android:layout_alignBaseline="@+id/main_text_bwPartNo"
+        android:layout_alignBottom="@+id/main_text_bwPartNo"
+        android:layout_alignStart="@+id/main_code_inventoryOfMachine_string" />
 
     <TextView
         android:text="@string/universal_undefined"
@@ -186,9 +198,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/main_code_EngRevLvl_string"
         android:textAlignment="viewEnd"
-        android:layout_alignBaseline="@+id/main_text_bwPartNo"
-        android:layout_alignBottom="@+id/main_text_bwPartNo"
-        android:layout_alignStart="@+id/main_code_julianDate_string" />
+        android:layout_alignBaseline="@+id/main_text_EngRevLvl"
+        android:layout_alignBottom="@+id/main_text_EngRevLvl"
+        android:layout_alignStart="@+id/main_code_bwPartNo_string" />
 
     <TextView
         android:text="@string/universal_undefined"
@@ -197,26 +209,16 @@
 
         android:layout_height="8pt"
         android:textAlignment="viewEnd"
-        android:layout_alignBottom="@+id/main_text_EngRevLvl"
-        android:layout_alignStart="@+id/main_code_counter_string" />
+        android:layout_alignBottom="@+id/main_text_julianDate"
+        android:layout_alignStart="@+id/main_code_EngRevLvl_string" />
 
     <TextView
         android:text="@string/universal_undefined"
         android:layout_width="300dp"
         android:id="@+id/main_code_counter_string"
         android:textAlignment="viewEnd"
-        android:layout_alignBottom="@+id/main_text_julianDate"
-        android:layout_alignStart="@+id/main_code_type_string"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:text="@string/universal_undefined"
-        android:layout_width="300dp"
         android:layout_height="wrap_content"
 
-        android:id="@+id/main_code_type_string"
-        android:textAlignment="viewEnd"
-        android:layout_below="@+id/main_code_counter_string"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
+        android:layout_below="@+id/main_code_julianDate_string"
+        android:layout_alignStart="@+id/main_code_julianDate_string" />
 </RelativeLayout>
