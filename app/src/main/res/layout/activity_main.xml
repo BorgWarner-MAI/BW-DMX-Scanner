@@ -53,7 +53,7 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id"
         android:layout_above="@+id/main_text_copyright"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true">
     </com.google.android.gms.ads.AdView>
@@ -66,16 +66,6 @@
         android:layout_above="@+id/adView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true" />
-
-    <Switch
-        android:text="@string/main_switch_translateToLang"
-        android:layout_height="5dp"
-        android:id="@+id/main_switch_translateToLang"
-        android:checked="false"
-        android:splitTrack="false"
-        android:layout_width="wrap_content"
-        android:layout_above="@+id/main_button_encode"
-        android:layout_alignEnd="@+id/main_code_encoded" />
 
     <TextView
         android:text="@string/universal_undefined"
@@ -221,4 +211,15 @@
 
         android:layout_below="@+id/main_code_julianDate_string"
         android:layout_alignStart="@+id/main_code_julianDate_string" />
+
+    <Switch
+        android:text="@string/main_switch_translateToLang"
+        android:layout_height="5dp"
+        android:id="@+id/main_switch_translateToLang"
+        android:checked="false"
+        android:splitTrack="false"
+        android:layout_width="wrap_content"
+        android:layout_above="@+id/main_code_encoded"
+        android:layout_alignEnd="@+id/main_code_encoded"
+        android:layout_marginBottom="14dp" />
 </RelativeLayout>

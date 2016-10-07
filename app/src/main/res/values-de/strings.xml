@@ -9,7 +9,7 @@
     <string name="main_text_inventoryOfMachine">Inventarnummer:</string>
     <string name="main_code_encoded">Der Code muss für den Scan sauber sein</string>
     <string name="main_text_bwPartNo">BW Teil Nummer:</string>
-    <string name="main_text_EngRevLvl">Änderungszustand:</string>
+    <string name="main_text_EngRevLvl">Änderungsindex:</string>
     <string name="main_text_julianDate">Datum:</string>
     <string name="main_text_counter">Zähler:</string>
     <string name="main_switch_translateToLang">"Übersetzen   "</string>
