@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
             /** ================== Nach der Einteilung ================== **/
 
-            final String text = "Der gescanne Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungszustand: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n";
+            final String text = "Der gescannte Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungsindex: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n";
             setScanContent(scanContent);        /** TODO Ändere das hier, sodass die Translation geht **/
             setAllCodes(text);
             FileSystem fileSystem = new FileSystem();
