@@ -1,3 +1,3 @@
-git remote add origin https://github.com/Pankraz01/BW-DMX-Scanner.git
+git remote add origin https://github.com/BorgWarner-MAI/BW-DMX-Scanner.git
 
 git push -u origin master
