@@ -195,16 +195,6 @@
     <TextView
         android:text="@string/universal_undefined"
         android:layout_width="300dp"
-        android:id="@+id/main_code_julianDate_string"
-
-        android:layout_height="8pt"
-        android:textAlignment="viewEnd"
-        android:layout_alignBottom="@+id/main_text_julianDate"
-        android:layout_alignStart="@+id/main_code_EngRevLvl_string" />
-
-    <TextView
-        android:text="@string/universal_undefined"
-        android:layout_width="300dp"
         android:id="@+id/main_code_counter_string"
         android:textAlignment="viewEnd"
         android:layout_height="wrap_content"
@@ -222,4 +212,15 @@
         android:layout_above="@+id/main_code_encoded"
         android:layout_alignEnd="@+id/main_code_encoded"
         android:layout_marginBottom="14dp" />
+
+    <TextView
+        android:text="@string/universal_undefined"
+        android:layout_width="300dp"
+        android:id="@+id/main_code_julianDate_string"
+
+        android:layout_height="8pt"
+        android:textAlignment="viewEnd"
+        android:layout_below="@+id/main_text_EngRevLvl"
+        android:layout_alignStart="@+id/main_code_EngRevLvl_string" />
+
 </RelativeLayout>
