@@ -69,7 +69,7 @@
 
     <Switch
         android:text="@string/main_switch_translateToLang"
-        android:layout_height="100px"
+        android:layout_height="5dp"
         android:id="@+id/main_switch_translateToLang"
         android:checked="false"
         android:splitTrack="false"

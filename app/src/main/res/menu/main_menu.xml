@@ -7,7 +7,6 @@
         app:showAsAction="ifRoom"
         android:title="About"></item>
 
-
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_action_name"

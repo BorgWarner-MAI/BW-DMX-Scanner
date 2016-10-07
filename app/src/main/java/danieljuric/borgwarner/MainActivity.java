@@ -39,25 +39,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
+        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk()); // Crashlytics Aktivieren
         setContentView(R.layout.activity_main);
 
         // Ad Banner Main Unten
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
+        // Addbanner Fertig
 
         // Finde die Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Setze Toolbar zu Actionbar für diese Activity
         // Die Toolbar darf nicht null sein
         setSupportActionBar(toolbar);
+        // Toolbar fertig
 
+        // File Saving
         FileSystem fileSystem = new FileSystem();
         Toast.makeText(this, fileSystem.loadFromTxt(), Toast.LENGTH_LONG).show();
+        //File Saving fertig
 
-
+        // Scan Button
         final Button main_button_encode = (Button) findViewById(R.id.main_button_encode);
         main_button_encode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,12 +74,13 @@ public class MainActivity extends AppCompatActivity {
                 scanIntegrator.initiateScan();
             }
         });
+        // Scan Button Fertig
 
     }
 
     /**
      *
-     *  TOOLBAR
+     *  TOOLBAR Methoden
      *
      */
     @Override
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    // Toolbar Fertig
 
     /**
      *
@@ -107,20 +112,23 @@ public class MainActivity extends AppCompatActivity {
      */
 
 
-
+// Wird aufgerufen, wenn der Scan erfolgt
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         Vibrator vibration = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         startVibration(vibration);
 
 
 
-
+        // Hole die Infos des Scans
         final IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
 
-        if (scanningResult != null) {
+
+        if (scanningResult != null/* Wenn Scanner Infos hat */) {
+            // Hole den Code von der Scan Info
             final String scanContent = scanningResult.getContents();
             //Toast.makeText(this, "Code Erkannt:\n" + scanContent, Toast.LENGTH_LONG).show();
 
+            // Alle Texte Definieren
             TextView main_code_string                          = (TextView) findViewById(R.id.main_code_string);
             TextView main_code_encoded                         = (TextView) findViewById(R.id.main_code_encoded);
             final TextView main_code_type_string               = (TextView) findViewById(R.id.main_code_type_string);
@@ -132,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             final TextView main_code_counter_string            = (TextView) findViewById(R.id.main_code_counter_string);
             final Switch   main_switch_translateToLang         = (Switch)   findViewById(R.id.main_switch_translateToLang);
 
-
+            // Codes setzen
             main_code_encoded.setText(scanContent);
             main_code_string.setText(scanContent);
 
@@ -152,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     final String normCodeE_New = scanContent.substring(22, 27);
                     final String normCodeF_New = scanContent.substring(27, 32);
 
+                    // Setze die Gesplitteten infos ein
                     main_code_plant_string.setText(normCodeA_New);
                     main_code_inventoryOfMachine_string.setText(normCodeB_New);
                     main_code_bwPartNo_string.setText(normCodeC_New);
@@ -159,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     main_code_julainDate_string.setText(normCodeE_New);
                     main_code_counter_string.setText(normCodeF_New);
 
-
+                    // Übersetzter Switcher
                     main_switch_translateToLang.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -190,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     final String normCodeC_Old = scanContent.substring(10, 24);
                     final String normCodeD_Old = scanContent.substring(24, 32);
 
+                    // Setzte die Gesplitteten Infos ein
                     main_code_plant_string.setText(normCodeA_Old);
                     main_code_inventoryOfMachine_string.setText(normCodeB_Old);
                     main_code_bwPartNo_string.setText(normCodeC_Old);
@@ -197,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
                     main_code_julainDate_string.setText("");
                     main_code_counter_string.setText("");
 
+                    // Übersetzer Switcher
                     main_switch_translateToLang.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -227,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
             /** ================== Nach der Einteilung ================== **/
 
             final String text = "Der gescanne Code:\n" + scanContent + "\n\nOrt: " + main_code_plant_string.getText() + "\nInventarnummer: " + main_code_inventoryOfMachine_string.getText() + "\nBW Teil Nummer: " + main_code_bwPartNo_string.getText() + "\nÄnderungszustand: " + main_code_EngRevLvl_string.getText() + "\nJulianisches Datum: " + main_code_julainDate_string.getText() + "\nZähler:" + main_code_counter_string.getText() + "\n\nArt des Codes: " + main_code_type_string.getText() + "\n";
-            setScanContent(scanContent);
+            setScanContent(scanContent);        /** TODO Ändere das hier, sodass die Translation geht **/
             setAllCodes(text);
             FileSystem fileSystem = new FileSystem();
             // Text Datei Anlegen

@@ -11,17 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:fitsSystemWindows="true">
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:layout_gravity="start"
-            />
+        android:fitsSystemWindows="true"
+        android:title="@string/app_name">
 
 
     </android.support.v7.widget.Toolbar>
@@ -38,5 +29,10 @@
     </FrameLayout>
 
     <!-- Layout for content is here. This can be a RelativeLayout  -->
+
+
+
+
+
 
 </LinearLayout>
