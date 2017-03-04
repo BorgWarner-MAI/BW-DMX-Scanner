@@ -1,6 +1,7 @@
 package danieljuric.borgwarner;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -30,7 +31,21 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Sende Mail...", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                sendEmail("\n\n\nErsetze alle xxxxxxxxxx mit deiner Nachricht!", "[BW DMX Scanner] xxxxxxxxxx");
+
+                String debugInfo ="Debug-infos:";
+                debugInfo += "\n OS Version: " + System.getProperty("os.version") + "(" + android.os.Build.VERSION.INCREMENTAL + ")";
+                debugInfo += "\n OS API Level: " + android.os.Build.VERSION.SDK_INT;
+                debugInfo += "\n Device: " + android.os.Build.DEVICE;
+                debugInfo += "\n Model (and Product): " + android.os.Build.MODEL + " ("+ android.os.Build.PRODUCT + ")";
+                debugInfo += "\n Timestamp: " + Build.TIME;
+                debugInfo += "\n Serialcode: " + Build.SERIAL;
+                debugInfo += "\n Display: " + Build.DISPLAY;
+                debugInfo += "\n Bootloader: " + Build.BOOTLOADER;
+                debugInfo += "\n Hardware: " + Build.HARDWARE;
+                debugInfo += "\n Host: " + Build.HOST;
+
+
+                sendEmail("\n\n\n========== Alles hier drunter nicht verändern! ==========\n\n" + debugInfo, "[BW DMX Scanner] Supportanfrage");
             }
         });
     }
